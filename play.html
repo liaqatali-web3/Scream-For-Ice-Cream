@@ -1,0 +1,159 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Volume Meter Sample</title>
+		<style>
+		</style>
+		<!-- Include the volume meter component -->
+		<script src="volume-meter.js"></script>
+		<!-- Include the main app logic -->
+		<script src="main.js"></script>
+
+		<style>
+			body{
+				background-image: url("asset/city3.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin:0px;
+				padding:0px;
+			}
+
+			button{
+				padding:20px 50px 20px 50px;
+				background-color: white;
+				border:1px solid yellow;
+				box-shadow: 0px 3px 5px 5px grey;
+				border-radius:5px;
+				margin-top:5%;
+
+			}
+			button:hover{
+				
+				padding:20px 50px 20px 50px;
+				background-color: white;
+				border:1px solid white;
+				box-shadow: 0px 3px 5px 5px grey;
+				border-radius:5px;
+
+			}
+
+			canvas{
+					margin-left:-117px;
+			}
+			.background{
+				background-color: black;
+				opacity:0.7;
+				padding:0% 10% 0% 10%;
+			}
+			.container{
+				height:90px;
+				width:5px;
+				background-color:red;
+				position: relative;
+				left:20%;
+				top:115px;
+				border-radius:10px;
+			}
+			.back{
+				background-color: black;
+				opacity: 0.7;
+				padding:20px;
+			}
+			.message{
+				z-index:15;
+				position:absolute;
+				width:100%;
+				font-size:40px;
+				height:100%;
+			}
+
+			/* The animation code */
+					@keyframes example {
+					from {position: relative;top:500px}
+					to {position:relative;top:-800px}
+					}
+
+					/* The element to apply the animation to */
+					.animated_welcome{
+					animation-name: example;
+					animation-duration: 20s;
+					animation-iteration-count: infinite;
+					padding:50px;
+					}
+
+					@keyframes example2 {
+					from {position: relative;top:500px}
+					to {position:relative;top:-800px}
+					}
+
+					.animated_welcome2{
+					animation-name: example2;
+					animation-duration: 4s;
+					padding:20px;
+					animation-iteration-count: infinite;
+					}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<center >
+
+		<div class="message" style="display:none;" id="cong_message">
+			<a href="index.html" style="text-decoration:none;color:white;border:1px solid white;padding:10px;border-radius:5px;position: absolute;left:45%;top:50%;">Restart</a>
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome" width="100px" src="asset/cong.png" alt="" srcset="">
+
+			<br>
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			<img class="animated_welcome2" width="100px" src="asset/cong.png" alt="" srcset="">
+			
+
+		</div>
+		<div class="background">
+		<span style="position: relative;left:20%;top:125px;font-size:80px;">&#128545;</span>
+		 <div class="container"></div>
+		<canvas id="meter" width="1000" height="100"></canvas>
+		<br>
+		<hr style="width:110%;position:relative;left:-50px;height:5px;background-color:white">
+		<span style="color:white;margin-left:-79px;">&#8595;</span>
+		<span style="color:red;margin-left:1000px;">&#8595;</span>
+		<span style="color:white;margin-left:10px;"></span><br>
+		<span style="color:white;position:relative;left:-43%"><img src="asset/start.png" width="130px" height="190px" alt="" srcset=""></span>
+		<span style="color:white;position:relative;left:43%;"><img src="asset/cup.png" width="130px" height="180px" alt="" srcset=""></span>
+		</div>
+
+		<center class="back">
+		<button onclick="startMeter();">Start</button>
+		</center>
+
+		</center>
+
+	</body>
+</html>
