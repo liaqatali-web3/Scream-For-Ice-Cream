@@ -1,2 +1,2 @@
 # Scream-For-Ice-Cream
-Scream for ice cream: is a web base game In which you have to maintain your voice for 20 sec above the thresh hold in order to get ice cream. 
+For the first  when start you start the application using button then a graph will be red once you generate voice so the the graph will be change into green color so risk start from there then you have to maintain that graph green for 20 sec in order to get ice cream or something else but basically a congratulations message
